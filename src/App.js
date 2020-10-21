@@ -12,6 +12,7 @@ import withAuth from "./hoc/withAuth";
 import Index from './pages/Index';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
+import Todo from './pages/Todo';
 
 
 const ProtectedAdminPageWithHOC = withAuth(Admin);
@@ -33,6 +34,7 @@ function App() {
             <div>
                 <Switch>
                     <Route path={'/'} component={Index} exact={true}/>
+                    <Route path={'/todos/:id'} component={Todo}/>
                     <Route path={'/admin'} component={Admin}/>
                     <Route path={'/admin-hoc'} component={ProtectedAdminPageWithHOC}/>
                     <Route path={'/admin-render-props'} render={() => {
